@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pack Ultime Telegram - Découvrez tous les secrets</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Couleurs officielles Telegram */
+            --telegram-blue: #0088cc;
+            --telegram-blue-dark: #006ba6;
+            --telegram-blue-light: #2ea6ff;
+            --telegram-blue-lighter: #64b5f6;
+            --telegram-bubble-out: #2481cc;
+            --telegram-bubble-in: #ffffff;
+            --telegram-bg-primary: #17212b;
+            --telegram-bg-secondary: #242f3d;
+            --telegram-bg-tertiary: #2b5278;
+            --telegram-accent: #64b5f6;
+            --telegram-success: #4dcd5e;
+            --telegram-warning: #ff9500;
+            --telegram-error: #ff3b30;
+            --telegram-text-primary: #000000;
+            --telegram-text-secondary: #708499;
+            --telegram-text-hint: #a2adb7;
+            --telegram-divider: #e4e9ec;
+            
+            /* Variables responsives */
+            --header-padding: clamp(2rem, 5vw, 4rem);
+            --section-padding: clamp(1rem, 3vw, 2rem);
+            --card-padding: clamp(1.5rem, 4vw, 2.5rem);
+            --font-size-h1: clamp(1.8rem, 5vw, 3rem);
+            --font-size-h2: clamp(1.5rem, 4vw, 2.5rem);
+            --font-size-h3: clamp(1.2rem, 3vw, 1.5rem);
+            --font-size-body: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--telegram-text-primary);
+            background: linear-gradient(135deg, #f7f9fc 0%, #edf4fd 50%, #e3f1fd 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header avec gradient Telegram authentique */
+        .header {
+            background: linear-gradient(135deg, var(--telegram-blue) 0%, var(--telegram-blue-dark) 25%, var(--telegram-bubble-out) 75%, var(--telegram-blue-light) 100%);
+            color: white;
+            padding: var(--header-padding) 0;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 136, 204, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(255,255,255,0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .header h1 {
+            font-size: var(--font-size-h1);
+            margin-bottom: clamp(0.5rem, 2vw, 1rem);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            font-weight: 600;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        .header p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            opacity: 0.95;
+            max-width: min(600px, 90vw);
+            margin: 0 auto;
+            padding: 0 1rem;
+            font-weight: 400;
+        }
+
+        .telegram-icon {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: clamp(0.5rem, 2vw, 1rem);
+            display: block;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+
+        /* Container */
+        .container {
+            max-width: min(1200px, 95vw);
+            margin: 0 auto;
+            padding: 0 clamp(0.5rem, 3vw, 1rem);
+        }
+
+        /* Barre de recherche style Telegram */
+        .search-section {
+            background: white;
+            padding: var(--section-padding);
+            margin: clamp(1rem, 3vw, 2rem) 0;
+            border-radius: clamp(15px, 3vw, 20px);
+            box-shadow: 0 4px 20px rgba(0, 136, 204, 0.08);
+            border: 1px solid var(--telegram-divider);
+        }
+
+        .search-bar {
+            display: flex;
+            max-width: min(640px, 100%);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: clamp(14px, 3vw, 16px) clamp(96px, 16vw, 120px) clamp(14px, 3vw, 16px) clamp(20px, 4vw, 25px);
+            border: 2px solid var(--telegram-divider);
+            border-radius: clamp(25px, 4vw, 30px);
+            font-size: var(--font-size-body);
+            outline: none;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+            min-height: 52px;
+            font-family: inherit;
+        }
+
+        .search-input:focus {
+            border-color: var(--telegram-blue);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(0, 136, 204, 0.1);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: clamp(6px, 1.5vw, 8px);
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--telegram-blue);
+            color: white;
+            border: none;
+            padding: clamp(10px, 2vw, 12px) clamp(16px, 3vw, 18px);
+            border-radius: clamp(20px, 4vw, 25px);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 136, 204, 0.3);
+            min-width: 44px;
+            min-height: 38px;
+        }
+
+        .clear-btn {
+            position: absolute;
+            right: clamp(56px, 9vw, 84px);
+            top: 50%;
+            transform: translateY(-50%);
+            background: #e9ecef;
+            color: #333;
+            border: none;
+            padding: 8px 10px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 34px;
+        }
+
+        .clear-btn:hover, .clear-btn:focus {
+            background: #dee2e6;
+        }
+
+        .search-btn:hover, .search-btn:focus {
+            background: var(--telegram-blue-dark);
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 136, 204, 0.4);
+        }
+
+        /* Navigation tabs style Telegram */
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: clamp(0.5rem, 2vw, 1rem);
+            margin: clamp(1rem, 3vw, 2rem) 0;
+            padding: 0 clamp(0.5rem, 2vw, 0);
+        }
+
+        .nav-tab {
+            background: white;
+            border: 2px solid var(--telegram-divider);
+            color: var(--telegram-text-secondary);
+            padding: clamp(10px, 2vw, 14px) clamp(16px, 3vw, 28px);
+            border-radius: clamp(18px, 3vw, 22px);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 500;
+            text-decoration: none;
+            font-size: clamp(0.85rem, 2vw, 1rem);
+            white-space: nowrap;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .nav-tab:hover {
+            background: #f8f9fa;
+            border-color: var(--telegram-blue-lighter);
+            color: var(--telegram-blue);
+            transform: translateY(-1px);
+        }
+
+        .nav-tab.active {
+            background: var(--telegram-blue);
+            color: white;
+            border-color: var(--telegram-blue);
+            box-shadow: 0 4px 12px rgba(0, 136, 204, 0.25);
+            transform: translateY(-1px);
+        }
+
+        /* Cards avec style Telegram */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+            gap: clamp(1rem, 3vw, 2.5rem);
+            margin: clamp(1rem, 3vw, 2rem) 0;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: clamp(18px, 3vw, 24px);
+            padding: var(--card-padding);
+            box-shadow: 0 2px 16px rgba(23, 33, 43, 0.04);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease, opacity 0.4s ease;
+            border: 1px solid var(--telegram-divider);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: clamp(3px, 1vw, 4px);
+            background: linear-gradient(90deg, var(--telegram-blue), var(--telegram-blue-light));
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 32px rgba(23, 33, 43, 0.12);
+            border-color: var(--telegram-blue-lighter);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: clamp(1rem, 3vw, 1.5rem);
+            flex-wrap: wrap;
+            gap: clamp(0.5rem, 2vw, 1rem);
+        }
+
+        .category-icon {
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            color: var(--telegram-blue);
+            flex-shrink: 0;
+        }
+
+        .category-title {
+            font-size: var(--font-size-h3);
+            color: var(--telegram-text-primary);
+            font-weight: 600;
+            word-wrap: break-word;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .category-description {
+            color: var(--telegram-text-secondary);
+            margin-bottom: clamp(1rem, 3vw, 1.5rem);
+            line-height: 1.6;
+            font-size: var(--font-size-body);
+        }
+
+        .channels-list {
+            list-style: none;
+        }
+
+        .channel-item {
+            display: flex;
+            align-items: center;
+            padding: clamp(10px, 2vw, 12px) 0;
+            border-bottom: 1px solid #f0f2f5;
+            transition: all 0.3s ease;
+            gap: clamp(8px, 2vw, 10px);
+            flex-wrap: wrap;
+        }
+
+        .channel-item:hover {
+            background: linear-gradient(90deg, rgba(0, 136, 204, 0.04), rgba(100, 181, 246, 0.04));
+            margin: 0 clamp(-12px, -2vw, -16px);
+            padding: clamp(12px, 2vw, 14px) clamp(12px, 2vw, 16px);
+            border-radius: clamp(10px, 2vw, 14px);
+            border-left: clamp(3px, 1vw, 4px) solid var(--telegram-blue);
+        }
+
+        .channel-link {
+            color: var(--telegram-blue);
+            text-decoration: none;
+            font-weight: 500;
+            flex: 1;
+            min-width: 0;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+            transition: all 0.3s ease;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            word-break: break-all;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+        }
+
+        .channel-link:hover {
+            color: var(--telegram-blue-dark);
+        }
+
+        .channel-members {
+            color: var(--telegram-text-secondary);
+            font-size: clamp(0.75rem, 1.8vw, 0.85rem);
+            background: #f8f9fa;
+            padding: clamp(4px, 1vw, 6px) clamp(8px, 1.5vw, 10px);
+            border-radius: clamp(10px, 2vw, 14px);
+            font-weight: 500;
+            white-space: nowrap;
+            flex-shrink: 0;
+            border: 1px solid var(--telegram-divider);
+        }
+
+        /* Section stats style Telegram */
+        .stats-section {
+            background: linear-gradient(135deg, var(--telegram-blue) 0%, var(--telegram-blue-dark) 40%, var(--telegram-bg-tertiary) 100%);
+            color: white;
+            padding: clamp(2.5rem, 6vw, 4rem) 0;
+            margin: clamp(2rem, 4vw, 4rem) 0;
+            border-radius: clamp(20px, 4vw, 30px);
+            text-align: center;
+            box-shadow: 0 12px 40px rgba(0, 136, 204, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(180px, 45vw), 1fr));
+            gap: clamp(1rem, 3vw, 2.5rem);
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item {
+            padding: clamp(1.5rem, 3vw, 2rem);
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: clamp(16px, 3vw, 20px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: clamp(2rem, 6vw, 3.2rem);
+            font-weight: 700;
+            margin-bottom: clamp(0.3rem, 1vw, 0.5rem);
+            color: white;
+        }
+
+        .stat-label {
+            opacity: 0.9;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            font-weight: 400;
+        }
+
+        /* Section fonctionnalités Telegram */
+        .telegram-features {
+            background: white;
+            padding: clamp(2.5rem, 5vw, 4rem) 0;
+            margin: clamp(2rem, 4vw, 3rem) 0;
+            border-radius: clamp(20px, 4vw, 30px);
+            border: 1px solid var(--telegram-divider);
+            box-shadow: 0 4px 20px rgba(23, 33, 43, 0.04);
+        }
+
+        .features-title {
+            text-align: center;
+            font-size: var(--font-size-h2);
+            color: var(--telegram-text-primary);
+            margin-bottom: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            padding: 0 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: clamp(1rem, 3vw, 2rem);
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: var(--section-padding);
+            background: #f8f9fa;
+            border-radius: clamp(16px, 3vw, 20px);
+            transition: all 0.3s ease;
+            border: 1px solid var(--telegram-divider);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(23, 33, 43, 0.08);
+            border-color: var(--telegram-blue-lighter);
+            background: white;
+        }
+
+        .feature-icon {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            margin-bottom: clamp(0.8rem, 2vw, 1.2rem);
+            display: block;
+        }
+
+        .feature-item h4 {
+            color: var(--telegram-text-primary);
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            margin-bottom: clamp(0.5rem, 2vw, 1rem);
+            font-weight: 600;
+        }
+
+        .feature-item p {
+            color: var(--telegram-text-secondary);
+            line-height: 1.6;
+            font-size: var(--font-size-body);
+        }
+
+        /* Footer style Telegram */
+        .footer {
+            background: var(--telegram-bg-primary);
+            color: rgba(255, 255, 255, 0.9);
+            padding: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(1.5rem, 2vw, 1.5rem);
+            margin-top: clamp(2rem, 4vw, 4rem);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        .footer-section h4 {
+            color: var(--telegram-blue-light);
+            margin-bottom: clamp(0.8rem, 2vw, 1.2rem);
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: clamp(0.4rem, 1vw, 0.6rem);
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: var(--font-size-body);
+            display: inline-block;
+            min-height: 32px;
+            line-height: 32px;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--telegram-blue-light);
+            padding-left: 8px;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            font-size: var(--font-size-body);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: clamp(1.5rem, 3vw, 2rem);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            opacity: 0.6;
+            margin-bottom: clamp(0.5rem, 1vw, 0.8rem);
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+        }
+
+        .footer-bottom a {
+            color: rgba(255, 255, 255, 0.5);
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--telegram-blue-light);
+        }
+
+        /* Bouton retour en haut */
+        .scroll-to-top {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--telegram-blue);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            border: none;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            cursor: pointer;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease, background 0.2s ease;
+            z-index: 1000;
+        }
+
+        .scroll-to-top.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .scroll-to-top:hover, .scroll-to-top:focus {
+            background: var(--telegram-blue-dark);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Contenu des onglets */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Responsive Design */
+        
+        /* Ultra small devices */
+        @media (max-width: 480px) {
+            .nav-tabs {
+                gap: 0.3rem;
+            }
+            
+            .nav-tab {
+                font-size: 0.75rem;
+                padding: 8px 12px;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .channel-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            .channel-members {
+                align-self: flex-end;
+            }
+        }
+
+        /* Small devices */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .nav-tabs {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Medium devices */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Large devices */
+        @media (min-width: 1025px) {
+            .categories-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Style d'accessibilité */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus amélioré */
+        *:focus {
+            outline: 3px solid var(--telegram-blue-lighter);
+            outline-offset: 2px;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--telegram-blue);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1000;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --telegram-text-primary: #ffffff;
+                --telegram-text-secondary: #a2adb7;
+                --telegram-divider: #2b5278;
+            }
+            
+            body {
+                background: linear-gradient(135deg, #17212b 0%, #1e2732 50%, #242f3d 100%);
+            }
+            
+            .category-card,
+            .search-section,
+            .telegram-features {
+                background: var(--telegram-bg-secondary);
+                border-color: var(--telegram-divider);
+            }
+            
+            .search-input {
+                background: var(--telegram-bg-primary);
+                color: white;
+                border-color: var(--telegram-divider);
+            }
+            
+            .feature-item {
+                background: var(--telegram-bg-primary);
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* État hors ligne */
+        html.is-offline body {
+            filter: grayscale(0.15);
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Passer au contenu principal</a>
+    
+    <header class="header">
+        <div class="container">
+            <i class="fab fa-telegram telegram-icon" aria-hidden="true"></i>
+            <h1>Pack Ultime Telegram</h1>
+            <p>Découvrez tous les canaux et bots secrets pour maximiser votre expérience Telegram</p>
+        </div>
+    </header>
+
+    <main class="container" id="main-content">
+        <section class="search-section">
+            <div class="search-bar">
+                <label for="search-input" class="sr-only">Rechercher</label>
+                <input type="text" id="search-input" class="search-input" placeholder="Rechercher un canal, catégorie ou bot..." aria-describedby="search-help" autocomplete="off">
+                <button class="clear-btn" type="button" aria-label="Effacer la recherche">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+                <button class="search-btn" type="button" aria-label="Lancer la recherche">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div id="search-help" class="sr-only">Tapez pour rechercher parmi les canaux et catégories disponibles</div>
+        </section>
+
+        <nav class="nav-tabs" role="tablist" aria-label="Catégories de canaux">
+            <a href="#" class="nav-tab active" data-tab="all" role="tab" aria-selected="true" aria-controls="all" tabindex="0">🏠 Tout</a>
+            <a href="#" class="nav-tab" data-tab="entertainment" role="tab" aria-selected="false" aria-controls="entertainment" tabindex="-1">🎬 Divertissement</a>
+            <a href="#" class="nav-tab" data-tab="education" role="tab" aria-selected="false" aria-controls="education" tabindex="-1">🎓 Éducation</a>
+            <a href="#" class="nav-tab" data-tab="tech" role="tab" aria-selected="false" aria-controls="tech" tabindex="-1">💻 Tech</a>
+            <a href="#" class="nav-tab" data-tab="business" role="tab" aria-selected="false" aria-controls="business" tabindex="-1">💼 Business</a>
+            <a href="#" class="nav-tab" data-tab="lifestyle" role="tab" aria-selected="false" aria-controls="lifestyle" tabindex="-1">🌟 Lifestyle</a>
+            <a href="#" class="nav-tab" data-tab="bots" role="tab" aria-selected="false" aria-controls="bots" tabindex="-1">🤖 Bots</a>
+            <a href="#" class="nav-tab" data-tab="news" role="tab" aria-selected="false" aria-controls="news" tabindex="-1">📰 Actualités</a>
+            <a href="#" class="nav-tab" data-tab="crypto" role="tab" aria-selected="false" aria-controls="crypto" tabindex="-1">₿ Crypto</a>
+        </nav>
+
+        <section id="all" class="tab-content active" role="tabpanel" aria-labelledby="tab-all">
+            <div class="categories-grid">
+                <article class="category-card" data-category="entertainment">
+                    <div class="category-header">
+                        <i class="fas fa-film category-icon" aria-hidden="true"></i>
+                        <h3 class="category-title">Films & Séries</h3>
+                    </div>
+                    <p class="category-description">
+                        Découvrez les meilleurs canaux pour suivre l'actualité cinéma, des recommandations et des discussions sur vos films préférés.
+                    </p>
+                    <ul class="channels-list">
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-1" rel="noopener">🎬 @CinemaPassionFR</a>
+                            <span class="channel-members" id="members-1">125k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-2" rel="noopener">🍿 @SeriesAddictVF</a>
+                            <span class="channel-members" id="members-2">89k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-3" rel="noopener">🎭 @CritiquesFilms</a>
+                            <span class="channel-members" id="members-3">67k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-4" rel="noopener">🎪 @DivertissementFR</a>
+                            <span class="channel-members" id="members-4">156k membres</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="category-card" data-category="education">
+                    <div class="category-header">
+                        <i class="fas fa-graduation-cap category-icon" aria-hidden="true"></i>
+                        <h3 class="category-title">Formations & Éducation</h3>
+                    </div>
+                    <p class="category-description">
+                        Accédez aux meilleures ressources éducatives, cours gratuits et formations professionnelles disponibles sur Telegram.
+                    </p>
+                    <ul class="channels-list">
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-5" rel="noopener">📚 @CoursGratuitsFR</a>
+                            <span class="channel-members" id="members-5">156k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-6" rel="noopener">🎓 @FormationsProfessionnelles</a>
+                            <span class="channel-members" id="members-6">98k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-7" rel="noopener">🧠 @DeveloppementPersonnel</a>
+                            <span class="channel-members" id="members-7">203k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-8" rel="noopener">📖 @LivresGratuits</a>
+                            <span class="channel-members" id="members-8">134k membres</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="category-card" data-category="tech">
+                    <div class="category-header">
+                        <i class="fas fa-code category-icon" aria-hidden="true"></i>
+                        <h3 class="category-title">Tech & Développement</h3>
+                    </div>
+                    <p class="category-description">
+                        Restez à jour avec les dernières tendances tech, outils de développement et innovations technologiques.
+                    </p>
+                    <ul class="channels-list">
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-9" rel="noopener">💻 @DevCommunityFR</a>
+                            <span class="channel-members" id="members-9">178k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-10" rel="noopener">⚡ @TechNewsFR</a>
+                            <span class="channel-members" id="members-10">234k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-11" rel="noopener">🔧 @OutilsDevFR</a>
+                            <span class="channel-members" id="members-11">145k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-12" rel="noopener">🐍 @PythonFrance</a>
+                            <span class="channel-members" id="members-12">92k membres</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="category-card" data-category="business">
+                    <div class="category-header">
+                        <i class="fas fa-chart-line category-icon" aria-hidden="true"></i>
+                        <h3 class="category-title">Business & Finance</h3>
+                    </div>
+                    <p class="category-description">
+                        Suivez les marchés financiers, découvrez des opportunités business et développez vos compétences entrepreneuriales.
+                    </p>
+                    <ul class="channels-list">
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-13" rel="noopener">💰 @CryptoTradingFR</a>
+                            <span class="channel-members" id="members-13">189k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-14" rel="noopener">📈 @BourseFinanceFR</a>
+                            <span class="channel-members" id="members-14">167k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-15" rel="noopener">🚀 @StartupNationFR</a>
+                            <span class="channel-members" id="members-15">134k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-16" rel="noopener">💼 @EntrepreneursFR</a>
+                            <span class="channel-members" id="members-16">201k membres</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="category-card" data-category="lifestyle">
+                    <div class="category-header">
+                        <i class="fas fa-heart category-icon" aria-hidden="true"></i>
+                        <h3 class="category-title">Lifestyle & Bien-être</h3>
+                    </div>
+                    <p class="category-description">
+                        Améliorez votre quotidien avec des conseils lifestyle, santé, cuisine et développement personnel.
+                    </p>
+                    <ul class="channels-list">
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-17" rel="noopener">🥗 @NutritionSanteFR</a>
+                            <span class="channel-members" id="members-17">198k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-18" rel="noopener">🏋️ @FitnessSportFR</a>
+                            <span class="channel-members" id="members-18">176k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-19" rel="noopener">🧘 @MeditationZenFR</a>
+                            <span class="channel-members" id="members-19">145k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-20" rel="noopener">👨‍🍳 @CuisineFacileFR</a>
+                            <span class="channel-members" id="members-20">223k membres</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="category-card" data-category="entertainment">
+                    <div class="category-header">
+                        <i class="fas fa-music category-icon" aria-hidden="true"></i>
+                        <h3 class="category-title">Musique & Audio</h3>
+                    </div>
+                    <p class="category-description">
+                        Découvrez de nouveaux artistes, partagez vos playlists et restez connecté à l'actualité musicale mondiale.
+                    </p>
+                    <ul class="channels-list">
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-21" rel="noopener">🎵 @NouvellesDecouvertesFR</a>
+                            <span class="channel-members" id="members-21">223k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-22" rel="noopener">🎧 @PlaylistsChillFR</a>
+                            <span class="channel-members" id="members-22">187k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-23" rel="noopener">🎤 @ActualiteMusicale</a>
+                            <span class="channel-members" id="members-23">156k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-24" rel="noopener">🎸 @RockMetalFR</a>
+                            <span class="channel-members" id="members-24">89k membres</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="category-card" data-category="bots">
+                    <div class="category-header">
+                        <i class="fas fa-robot category-icon" aria-hidden="true"></i>
+                        <h3 class="category-title">Bots Utiles</h3>
+                    </div>
+                    <p class="category-description">
+                        Collection des meilleurs bots Telegram pour automatiser vos tâches et améliorer votre productivité.
+                    </p>
+                    <ul class="channels-list">
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-25" rel="noopener">🤖 @ProductivityBotsCollection</a>
+                            <span class="channel-members" id="members-25">145k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-26" rel="noopener">⚙️ @AutomationBotsFR</a>
+                            <span class="channel-members" id="members-26">98k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-27" rel="noopener">📊 @AnalyticsBotsFR</a>
+                            <span class="channel-members" id="members-27">76k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-28" rel="noopener">🎮 @GamesBotsFR</a>
+                            <span class="channel-members" id="members-28">123k membres</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="category-card" data-category="news">
+                    <div class="category-header">
+                        <i class="fas fa-newspaper category-icon" aria-hidden="true"></i>
+                        <h3 class="category-title">Actualités & Info</h3>
+                    </div>
+                    <p class="category-description">
+                        Restez informé avec les dernières actualités françaises et internationales, analyses et débats.
+                    </p>
+                    <ul class="channels-list">
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-29" rel="noopener">📰 @ActualitesFranceFR</a>
+                            <span class="channel-members" id="members-29">298k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-30" rel="noopener">🌍 @ActualitesInternational</a>
+                            <span class="channel-members" id="members-30">245k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-31" rel="noopener">💬 @DebatsSocieteFR</a>
+                            <span class="channel-members" id="members-31">167k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-32" rel="noopener">🔍 @FactCheckingFR</a>
+                            <span class="channel-members" id="members-32">134k membres</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="category-card" data-category="crypto">
+                    <div class="category-header">
+                        <i class="fab fa-bitcoin category-icon" aria-hidden="true"></i>
+                        <h3 class="category-title">Crypto & Blockchain</h3>
+                    </div>
+                    <p class="category-description">
+                        Suivez le marché des cryptomonnaies, analyses techniques, actualités blockchain et conseils trading.
+                    </p>
+                    <ul class="channels-list">
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-33" rel="noopener">₿ @BitcoinAnalyseFR</a>
+                            <span class="channel-members" id="members-33">234k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-34" rel="noopener">🔗 @BlockchainNewsFR</a>
+                            <span class="channel-members" id="members-34">189k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-35" rel="noopener">📈 @CryptoSignalsFR</a>
+                            <span class="channel-members" id="members-35">156k membres</span>
+                        </li>
+                        <li class="channel-item">
+                            <a href="#" class="channel-link" aria-describedby="members-36" rel="noopener">💎 @AltcoinsGemsFR</a>
+                            <span class="channel-members" id="members-36">198k membres</span>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="stats-section" aria-labelledby="stats-title">
+            <div class="container">
+                <h2 id="stats-title" class="sr-only">Statistiques du Pack Ultime Telegram</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label">Canaux Premium</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5M+</div>
+                        <div class="stat-label">Membres Total</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Bots Exclusifs</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support & MAJ</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="telegram-features" aria-labelledby="features-title">
+            <div class="container">
+                <h2 id="features-title" class="features-title">🚀 Fonctionnalités Telegram Avancées</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon" aria-hidden="true">🤖</div>
+                        <h4>Bots Intelligents</h4>
+                        <p>Automatisez vos tâches avec des bots personnalisés pour gagner en productivité</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon" aria-hidden="true">📂</div>
+                        <h4>Stockage Illimité</h4>
+                        <p>Sauvegardez tous vos fichiers sans limite de taille ni d'espace</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon" aria-hidden="true">🔒</div>
+                        <h4>Sécurité Maximale</h4>
+                        <p>Chiffrement de bout en bout pour protéger toutes vos données personnelles</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon" aria-hidden="true">⚡</div>
+                        <h4>Vitesse Lightning</h4>
+                        <p>Messages instantanés livrés partout dans le monde en quelques millisecondes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>📱 Pack Ultime Telegram</h4>
+                    <p>Votre guide complet pour maîtriser Telegram et découvrir tous ses secrets cachés. Rejoignez une communauté de millions d'utilisateurs actifs.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>🔗 Liens Rapides</h4>
+                    <ul>
+                        <li><a href="#" aria-label="Accéder au guide d'installation" rel="noopener">Guide d'installation</a></li>
+                        <li><a href="#" aria-label="Consulter la FAQ" rel="noopener">FAQ Telegram</a></li>
+                        <li><a href="#" aria-label="Contacter le support" rel="noopener">Support technique</a></li>
+                        <li><a href="#" aria-label="Voir les mises à jour" rel="noopener">Mises à jour</a></li>
+                        <li><a href="#" aria-label="Politique de confidentialité" rel="noopener">Confidentialité</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>💬 Communauté</h4>
+                    <ul>
+                        <li><a href="#" aria-label="Rejoindre le canal principal" rel="noopener">@PackUltimeTelegram</a></li>
+                        <li><a href="#" aria-label="Rejoindre le groupe de support" rel="noopener">Groupe Support</a></li>
+                        <li><a href="#" aria-label="S'abonner aux actualités" rel="noopener">Canal Actualités</a></li>
+                        <li><a href="#" aria-label="Envoyer un feedback" rel="noopener">Feedback</a></li>
+                        <li><a href="#" aria-label="Rejoindre Discord" rel="noopener">Serveur Discord</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>📊 Statistiques Live</h4>
+                    <p>
+                        <strong>Dernière mise à jour:</strong> Aujourd'hui<br>
+                        <strong>Nouveaux canaux:</strong> +15 cette semaine<br>
+                        <strong>Utilisateurs actifs:</strong> 2.3M ce mois
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pack Ultime Telegram. Tous droits réservés.</p>
+                <p>Fait avec ❤️ pour la communauté Telegram francophone</p>
+                <p><a href="#" rel="noopener">Mentions légales</a> • <a href="#" rel="noopener">CGU</a> • <a href="#" rel="noopener">Contact</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-to-top" aria-label="Retour en haut" title="Retour en haut">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script>
+        // Cache sélecteurs courants
+        const tabSelector = '.nav-tab';
+        const tabContentSelector = '.tab-content';
+        const cardSelector = '.category-card';
+        const searchInputEl = document.querySelector('.search-input');
+        const clearBtnEl = document.querySelector('.clear-btn');
+        const scrollTopBtn = document.querySelector('.scroll-to-top');
+
+        // Navigation par onglets avec support ARIA et mémorisation
+        function activateTab(tabEl) {
+            const allTabs = document.querySelectorAll(tabSelector);
+            const allContents = document.querySelectorAll(tabContentSelector);
+            allTabs.forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+                t.setAttribute('tabindex', '-1');
+            });
+            allContents.forEach(content => content.classList.remove('active'));
+
+            tabEl.classList.add('active');
+            tabEl.setAttribute('aria-selected', 'true');
+            tabEl.setAttribute('tabindex', '0');
+
+            const tabId = tabEl.getAttribute('data-tab');
+            localStorage.setItem('activeTab', tabId);
+
+            if (tabId === 'all') {
+                document.getElementById('all').classList.add('active');
+                // Réinitialise le filtrage pour tout afficher
+                filterCards('all');
+            } else {
+                filterCards(tabId);
+            }
+            announceToScreenReader(`Onglet ${tabEl.textContent.trim()} sélectionné`);
+        }
+
+        document.querySelectorAll(tabSelector).forEach((tab, index, tabs) => {
+            tab.addEventListener('click', function(e) {
+                e.preventDefault();
+                activateTab(this);
+            });
+
+            tab.addEventListener('keydown', function(e) {
+                const isHorizontal = true; // pour lecture future si orientation change
+                if (!isHorizontal) return;
+                if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    const dir = e.key === 'ArrowRight' ? 1 : -1;
+                    let nextIndex = (index + dir + tabs.length) % tabs.length;
+                    tabs[nextIndex].focus();
+                    activateTab(tabs[nextIndex]);
+                }
+            });
+        });
+
+        // Restaurer l'onglet actif
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTab = localStorage.getItem('activeTab');
+            if (savedTab) {
+                const tab = document.querySelector(`${tabSelector}[data-tab="${savedTab}"]`);
+                if (tab) activateTab(tab);
+            }
+        });
+
+        // Fonction de filtrage améliorée
+        function filterCards(category) {
+            const allSection = document.getElementById('all');
+            const cards = document.querySelectorAll(cardSelector);
+            let visibleCount = 0;
+            
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                    card.setAttribute('aria-hidden', 'false');
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                    card.setAttribute('aria-hidden', 'true');
+                }
+            });
+            
+            allSection.classList.add('active');
+            announceToScreenReader(`${visibleCount} catégorie${visibleCount > 1 ? 's' : ''} affichée${visibleCount > 1 ? 's' : ''}`);
+        }
+
+        // Recherche avec debouncing
+        let searchTimeout;
+        searchInputEl.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                performSearch(this.value);
+            }, 250);
+        });
+
+        // Bouton effacer
+        clearBtnEl.addEventListener('click', () => {
+            if (searchInputEl.value) {
+                searchInputEl.value = '';
+                performSearch('');
+                searchInputEl.focus();
+            }
+        });
+
+        // Bouton rechercher (soumission)
+        document.querySelector('.search-btn').addEventListener('click', () => {
+            performSearch(searchInputEl.value);
+        });
+
+        function performSearch(searchTerm) {
+            const term = searchTerm.trim().toLowerCase();
+            const cards = document.querySelectorAll(cardSelector);
+            let visibleCount = 0;
+            
+            cards.forEach(card => {
+                const title = card.querySelector('.category-title').textContent.toLowerCase();
+                const description = card.querySelector('.category-description').textContent.toLowerCase();
+                const channels = Array.from(card.querySelectorAll('.channel-link')).map(link => link.textContent.toLowerCase());
+                
+                const matches = term === '' || title.includes(term) || 
+                               description.includes(term) || 
+                               channels.some(channel => channel.includes(term));
+                
+                if (matches) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeInUp 0.5s ease forwards';
+                    card.setAttribute('aria-hidden', 'false');
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                    card.setAttribute('aria-hidden', 'true');
+                }
+            });
+            
+            if (term) {
+                announceToScreenReader(`${visibleCount} résultat${visibleCount > 1 ? 's' : ''} trouvé${visibleCount > 1 ? 's' : ''} pour "${searchTerm}"`);
+                showNotification(`📊 ${visibleCount} résultat(s) trouvé(s)`, 'success');
+            } else {
+                announceToScreenReader('Recherche effacée, toutes les catégories sont visibles');
+            }
+        }
+
+        // Animation différée et lazy-entrance pour les cartes
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll(cardSelector);
+            const isMobile = window.innerWidth <= 768;
+            
+            cards.forEach((card, index) => {
+                const delay = isMobile ? index * 0.05 : index * 0.1;
+                card.style.animationDelay = `${delay}s`;
+            });
+
+            if ('IntersectionObserver' in window) {
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+                cards.forEach(card => io.observe(card));
+            } else {
+                cards.forEach(card => card.style.opacity = '1');
+            }
+        });
+
+        // Gestion des clics sur les liens de canaux
+        document.querySelectorAll('.channel-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Animation de clic
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+                
+                const channelName = this.textContent.trim();
+                console.log('Canal cliqué:', channelName);
+                
+                showNotification(`🚀 Redirection vers ${channelName}`, 'info');
+                announceToScreenReader(`Redirection vers le canal ${channelName}`);
+            });
+        });
+
+        // Système de notifications Telegram-style
+        function showNotification(message, type = 'info') {
+            // Supprimer les notifications existantes
+            const existingNotifications = document.querySelectorAll('.notification');
+            existingNotifications.forEach(notif => notif.remove());
+            
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.setAttribute('role', 'status');
+            notification.setAttribute('aria-live', 'polite');
+            
+            // Couleurs selon le type
+            let bgColor;
+            switch(type) {
+                case 'success':
+                    bgColor = 'var(--telegram-success)';
+                    break;
+                case 'warning':
+                    bgColor = 'var(--telegram-warning)';
+                    break;
+                case 'error':
+                    bgColor = 'var(--telegram-error)';
+                    break;
+                default:
+                    bgColor = 'var(--telegram-blue)';
+            }
+            
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${bgColor};
+                color: white;
+                padding: 16px 24px;
+                border-radius: 16px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+                z-index: 1000;
+                transform: translateX(400px);
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                font-weight: 500;
+                max-width: min(90vw, 320px);
+                word-wrap: break-word;
+                font-size: 14px;
+                backdrop-filter: blur(10px);
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(400px)';
+                notification.style.opacity = '0';
+                setTimeout(() => {
+                    if (document.body.contains(notification)) {
+                        document.body.removeChild(notification);
+                    }
+                }, 400);
+            }, 3000);
+        }
+
+        // Annonces pour lecteurs d'écran
+        function announceToScreenReader(message) {
+            const announcement = document.createElement('div');
+            announcement.setAttribute('aria-live', 'polite');
+            announcement.setAttribute('aria-atomic', 'true');
+            announcement.style.cssText = `
+                position: absolute;
+                left: -10000px;
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+            `;
+            announcement.textContent = message;
+            document.body.appendChild(announcement);
+            
+            setTimeout(() => {
+                if (document.body.contains(announcement)) {
+                    document.body.removeChild(announcement);
+                }
+            }, 1000);
+        }
+
+        // Navigation clavier améliorée et raccourcis
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-navigation');
+            }
+            
+            if (e.key === 'Escape') {
+                const notifications = document.querySelectorAll('.notification');
+                notifications.forEach(notif => notif.remove());
+            }
+            
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+                e.preventDefault();
+                searchInputEl.focus();
+                showNotification('🔍 Recherche activée', 'info');
+            }
+        });
+
+        document.addEventListener('mousedown', function() {
+            document.body.classList.remove('keyboard-navigation');
+        });
+
+        // Gestion de la taille viewport mobile
+        function setVHProperty() {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        window.addEventListener('resize', debounce(setVHProperty, 250));
+        window.addEventListener('orientationchange', debounce(setVHProperty, 250));
+        document.addEventListener('DOMContentLoaded', setVHProperty);
+
+        // Fonction debounce
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Gestion du statut réseau (complété)
+        function handleNetworkStatus() {
+            const updateStatus = (online) => {
+                document.documentElement.classList.toggle('is-offline', !online);
+                if (online) {
+                    showNotification('🌐 Connexion rétablie', 'success');
+                    announceToScreenReader('Connexion Internet rétablie');
+                } else {
+                    showNotification('⚠️ Hors ligne. Certaines fonctionnalités peuvent être limitées', 'warning');
+                    announceToScreenReader('Connexion Internet perdue');
+                }
+            };
+            window.addEventListener('online', () => updateStatus(true));
+            window.addEventListener('offline', () => updateStatus(false));
+            // état initial
+            updateStatus(navigator.onLine);
+        }
+        handleNetworkStatus();
+
+        // Bouton retour en haut
+        const onScroll = debounce(() => {
+            if (window.scrollY > 400) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        }, 100);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
+
